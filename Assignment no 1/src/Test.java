@@ -28,38 +28,32 @@ Note:-Refer Java Documentation and look for the appropriate Wrapper class method
 //quo=1/2=0
 
 ////Using Traditional Method : 
+import java.util.Scanner;
+public class Test {
+	public static void main(String[] args) {
+		Scanner myObj = new Scanner(System.in);
+		System.out.print("Enter the number :: ");
+		int num = myObj.nextInt();
+		int rem, quo, bin = 0, i = 1;
+		while (num != 0) {//true,true,true,true,true,false
+			rem = num % 2;//0,0,1,0,1
+			quo = num / 2;//10,5,2,1,0
+			num = quo;//10,5,2,1,0
+			bin = rem*i+bin;//0,0,100,100,10100
+			i *= 10;//10,100,1000,10000,100000
+		}
+		System.out.println("Binary number :: " + bin);//10100
+	}
+}
+
+////Using Wrapper Classes
 //import java.util.Scanner;
 //public class Test {
 //	public static void main(String[] args) {
-//		Scanner myObj = new Scanner(System.in);
-//		System.out.println("Enter a decimal no. : ");
-//		int num = myObj.nextInt();
-//		int rem, quo, bin = 0, i = 1;
-//		while (num != 0) {
-//			rem = num % 2;
-//			quo = num / 2;
-//			num = quo;
-//			bin = rem*i+bin;
-//			i *= 10;
-//		}
-//		System.out.println("Binary Conversion : ");
-//		System.out.println(bin);
+//		System.out.print("Enter the number :: ");
+//		Scanner s = new Scanner(System.in);
+//		Integer num = s.nextInt();
+//		String binaryNumber = Integer.toBinaryString(num);
+//		System.out.println("Binary number :: " + binaryNumber);
 //	}
 //}
-
-//Using Wrapper Classes
-import java.util.Scanner;
-
-public class Test{
- 
- public static void main(String[] args) {
- 
-  System.out.print("Enter the number :: ");
-  Scanner s = new Scanner(System.in);
-  Integer num = s.nextInt();  // Integer wrapper class
-  
-  // Use toBinaryString( ) Method of Integer wrapper class
-  String binaryNumber = Integer.toBinaryString(num); 
-  System.out.println("Binary number of " + num + " is :: "+binaryNumber);
- }
-}
